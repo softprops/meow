@@ -79,7 +79,7 @@ private [meow] class Notifier(val args: Map[String, Any]) {
   val password = arg("P")_
   
   /** Use UDP instead of DO to send a remote notification */
-  val udp = arg("u")_
+  def udp() = arg("u")("")
   
   /** Port number for UDP notifications */
   val port = arg("-port")_

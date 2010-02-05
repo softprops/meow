@@ -8,8 +8,4 @@ A scala [growl](http://growl.info/) client that purs
     
     Growl title("Rowr") message("grrrr") image("/path/to/lion.png") meow
 
-# todo
-
-  test network meowing
-
 2010 Doug Tangren (softprops)
