@@ -8,4 +8,8 @@ A scala [growl](http://growl.info/) client that purs
     
     Growl title("Rowr") message("grrrr") image("/path/to/lion.png") meow
 
+# todo
+
+  - ~/.meow config file with defaults and network info
+
 2010 Doug Tangren (softprops)
