@@ -26,10 +26,7 @@ object Growl extends Notifier(Map()) {
 private [meow] class Notifier(val args: Map[String, Any]) {
   private def arg(k:String)(v:Any) = new Notifier(args + (k->v))
 
-  def argList = args.map ((e:(String,Any)) => 
-      "***-%s***%s***".format(e._1,e._2.toString))
-      .mkString("").split("[*]{3}")
-      .toList.remove(_.trim.isEmpty)
+  def argList = args.flatMap { case (k,v) => "-" + k :: v.toString :: Nil }.toList
 
   /** meow at something */
   def meow =
