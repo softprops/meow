@@ -23,7 +23,8 @@ A scala [growl](http://growl.info/) client that purs
     publish-local
 
 ## todo
-
-  - ~/.meow config file with defaults and network info
+  
+  * publish to a hosted maven repo
+  * ~/.meow config file with defaults and network info
 
 2010 Doug Tangren (softprops)
