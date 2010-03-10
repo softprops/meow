@@ -11,8 +11,7 @@ object Growl extends Notifier(Map()) {
   private val which = >("which","growlnotify").start
   
   /** Path to growl executable */
-  val bin = Source.fromInputStream(which.getInputStream).
-              getLines.mkString("").trim
+  val bin = Source.fromInputStream(which getInputStream).getLines.mkString("").trim
   
   /** Indicates whether Growl is installed */
   val installed = bin.length != 0
