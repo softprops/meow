@@ -24,7 +24,7 @@ To include meow in your [sbt](http://code.google.com/p/simple-build-tool) projec
 
     class YourProject(info: ProjectInfo) extends PluginProject(info) {
       val lessRepo = "lessis repo" at "http://repo.lessis.me"
-      val meow = "me.lessis" %% "meow" % "0.0.2"
+      val meow = "me.lessis" %% "meow" % "0.1.0-SNAPSHOT"
     }
     
 ## todo
