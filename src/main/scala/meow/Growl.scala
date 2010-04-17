@@ -12,9 +12,7 @@ object Growl extends Notifier(Map()) {
   
   private val which = >("which", "growlnotify").start
   
-  /** Path to growl executable 
-   * @note getLines compiles < 2.8 but does not in > 2.8 and visa versa
-   */
+  /** Path to growl executable */
   val bin = Source.fromInputStream(which getInputStream).lines.mkString("").trim
   
   /** Indicates whether Growl is installed */
