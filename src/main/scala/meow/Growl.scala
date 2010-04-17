@@ -8,10 +8,14 @@ object > { def apply(s:String*) = new java.lang.ProcessBuilder(s.toArray:_*) }
 
 /** Growl companion object */
 object Growl extends Notifier(Map()) {
-  private val which = >("which","growlnotify").start
+  import Transitioning._
   
-  /** Path to growl executable */
-  val bin = Source.fromInputStream(which getInputStream).getLines.mkString("").trim
+  private val which = >("which", "growlnotify").start
+  
+  /** Path to growl executable 
+   * @note getLines compiles < 2.8 but does not in > 2.8 and visa versa
+   */
+  val bin = Source.fromInputStream(which getInputStream).lines.mkString("").trim
   
   /** Indicates whether Growl is installed */
   val installed = bin.length != 0
