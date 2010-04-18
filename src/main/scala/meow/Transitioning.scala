@@ -6,7 +6,7 @@ object Transitioning {
     /** LineIterator is shim incompatible verions Source#getLines in Scala > 2.8 and < 2.8 */
     class LineIterator(iter: BufferedIterator[Char], separator: String) extends Iterator[String] {
       require(separator.length < 3, "Line separator may be 1 or 2 characters only.")
-      
+
       private[this] val isNewline: Char => Boolean =
         separator.length match {
           case 1 => _ == separator(0)
@@ -32,7 +32,7 @@ object Transitioning {
       def hasNext = iter.hasNext
       def next = {
         builder.clear
-        if(hasNext) while (hasNext && buildingLine()) {}
+        while (hasNext && buildingLine()) {}
         builder.toString
       }
     }
