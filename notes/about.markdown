@@ -1,4 +1,4 @@
-[meow][1] is ity wrapper for the [growl][2] command line [binary][3].
+[meow][1] is an ity wrapper for the [growl][2] command line [binary][3].
 
 [1]: http://github.com/softprops/meow/
 [2]: http://growl.info/
