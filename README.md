@@ -16,7 +16,7 @@ A Scala [growl](http://growl.info/) client that purs
 
 Meow is [cross built](http://code.google.com/p/simple-build-tool/wiki/CrossBuild) over the following verions versions of scala.
 
-    2.7.3, 2.7.4, 2.7.5, 2.7.6, 2.7.7, 2.8.0.Beta1
+    2.7.3, 2.7.4, 2.7.5, 2.7.6, 2.7.7, 2.8.0.Beta1, 2.8.0.RC1, 2.8.0.RC2, 2.8.0.RC6, 2.8.0
     
 ### via sbt
 
