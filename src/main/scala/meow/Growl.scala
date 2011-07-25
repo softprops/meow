@@ -4,10 +4,7 @@ import scala.io.Source
 
 /** A Process Builder factory. in ~future~ @see @experimental scala.io.Process
  */
-object exec { def apply(s:String*) = {
-  println("args %s" format(s))
-  new java.lang.ProcessBuilder(s.toArray:_*)
-} }
+object exec { def apply(s:String*) = new java.lang.ProcessBuilder(s.toArray:_*) }
 
 object Growl extends Notifier(Map()) {
   import Transitioning._
