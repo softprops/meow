@@ -1,0 +1,3 @@
+* fixed bug with `sticky` notifications
+
+* converted to sbt 0.10.* project
