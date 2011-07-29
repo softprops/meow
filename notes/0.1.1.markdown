@@ -1,3 +1,5 @@
-* fixed bug with `sticky` notifications
 
-* converted to sbt 0.10.* project
+- converted to sbt 0.10.* project
+
+- fixed bug with `sticky` notifications
+
