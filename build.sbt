@@ -2,7 +2,7 @@ organization := "me.lessis"
 
 name := "meow"
 
-version := "0.1.1-SNAPSHOT"
+version := "0.1.1"
 
 libraryDependencies <+=  (scalaVersion)(sv =>
     sv.split('.').toList match {
