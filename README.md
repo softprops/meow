@@ -1,6 +1,6 @@
 # meow
 
-A Scala [growl](http://growl.info/) client that purs
+A Scala [growl](http://growl.info/) client that purrrrs
 
 ## play with kittens
 
@@ -14,21 +14,8 @@ A Scala [growl](http://growl.info/) client that purs
 
 ## install
 
-Meow is [cross built](http://code.google.com/p/simple-build-tool/wiki/CrossBuild) over the following verions versions of scala.
+    resolvers += "less is" at "http://repo.lessis.me"
 
-    2.7.3, 2.7.4, 2.7.5, 2.7.6, 2.7.7, 2.8.0.Beta1, 2.8.0.RC1, 2.8.0.RC2, 2.8.0.RC6, 2.8.0
-    
-### via sbt
+    libraryDependencies += "me.lessis" %% "meow" % "0.1.1"
 
-To include meow in your [sbt](http://code.google.com/p/simple-build-tool) project, add the following to your project file.
-
-    class YourProject(info: ProjectInfo) extends PluginProject(info) {
-      val lessRepo = "lessis repo" at "http://repo.lessis.me"
-      val meow = "me.lessis" %% "meow" % "0.1.0-SNAPSHOT"
-    }
-    
-## todo
-  
-  * ~/.meow config file with defaults and network info
-
-2010 Doug Tangren (softprops)
+2010-2011 Doug Tangren (softprops)
