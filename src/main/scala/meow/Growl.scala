@@ -7,12 +7,12 @@ import scala.io.Source
 object exec { def apply(s:String*) = new java.lang.ProcessBuilder(s.toArray:_*) }
 
 object Growl extends Notifier(Map()) {
-  import Transitioning._
+  //import Transitioning._
 
   private val which = exec("which", "growlnotify").start
 
   /** Path to growl executable */
-  val bin = Source.fromInputStream(which getInputStream).lines.mkString("").trim
+  val bin = Source.fromInputStream(which getInputStream).mkString("").trim
 
   /** Indicates whether Growl is installed */
   val installed = bin.length != 0
@@ -24,10 +24,12 @@ object Growl extends Notifier(Map()) {
 
 /** Wrapper around the Growl cmd line binary */
 private [meow] class Notifier(val args: Map[String, Any]) {
-  private def arg(k:String)(v:Any) = new Notifier(args + (k->v))
+  val flags = Seq("s", "u")
+  private def arg(k:String)(v:Any) = new Notifier(args + (k -> v))
+  private def flag(k: String) = arg(k)("")
 
   def argList =
-    args.flatMap { case (k,v) => "-" + k :: v.toString :: Nil filterNot(_.isEmpty) }.toList
+    args.flatMap { case (k,v) => if(flags.contains(k)) "-" + k :: Nil else "-" + k :: v.toString :: Nil }.toList
 
   /** meow at something */
   def meow =
@@ -41,7 +43,7 @@ private [meow] class Notifier(val args: Map[String, Any]) {
   val title = arg("t")_
 
   /** Make the notification sticky */
-  def sticky() = arg("s")("")
+  def sticky() = flag("s")
 
   /** Set the name of the application that sends the notification */
   val name = arg("n")_
@@ -73,7 +75,7 @@ private [meow] class Notifier(val args: Map[String, Any]) {
   val password = arg("P")_
 
   /** Use UDP instead of DO to send a remote notification */
-  def udp() = arg("u")("")
+  def udp() = flag("u")
 
   /** Port number for UDP notifications */
   val port = arg("-port")_
