@@ -13,6 +13,6 @@ libraryDependencies <+=  (scalaVersion)(sv =>
     }
 )
 
-crossScalaVersions ++= Seq("2.8.0","2.8.1","2.9.0", "2.9.0-1", "2.9.1.RC1")
+crossScalaVersions ++= Seq("2.8.0","2.8.1","2.9.0", "2.9.0-1", "2.9.1.RC1", "2.9.1")
 
 publishTo :=  Some(Resolver.file("lessis repo", new java.io.File("/var/www/repo")))
