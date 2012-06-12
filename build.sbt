@@ -13,8 +13,6 @@ publishMavenStyle := true
 
 publishArtifact in Test := false
 
-version := "0.1.0"
-
 licenses <<= (version)(v =>
       Seq("MIT" ->
           url("https://github.com/softprops/meow/blob/%s/LICENSE" format v)))
