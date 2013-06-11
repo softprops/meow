@@ -12,7 +12,7 @@ object Growl extends Notifier(Map()) {
   private val which = exec("which", "growlnotify").start
 
   /** Path to growl executable */
-  val bin = Source.fromInputStream(which getInputStream).mkString("").trim
+  val bin = Source.fromInputStream(which.getInputStream).mkString("").trim
 
   /** Indicates whether Growl is installed */
   val installed = bin.length != 0
@@ -33,7 +33,7 @@ private [meow] class Notifier(val args: Map[String, Any]) {
 
   /** meow at something */
   def meow =
-    if(Growl.installed) exec ((Growl.bin :: argList): _*) start
+    if(Growl.installed) exec ((Growl.bin :: argList): _*).start
     else Growl.warn()
 
   /**  Sets the message to be used */
